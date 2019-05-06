@@ -11,21 +11,16 @@ namespace Final
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int Age { get; set; }
-        public int Height { get; set; }
-        public string EyeColor { get; set; }
-
-        public People(string firstname, string lastname, int age, int height, string eyecolor)
+        public People(string firstname = "", string lastname = "", int age = 0)
         {
-            firstname = FirstName;
-            lastname = LastName;
-            age = Age;
-            height = Height;
-            eyecolor = EyeColor;
+            FirstName = firstname;
+            LastName = lastname;
+            Age = age;
         }
 
         public override string ToString()
         {
-            return string.Format("{0}{1} is {2} years old. They are {3} inches tall, and have {4} eyes.", FirstName, LastName, Age, Height, EyeColor);
+            return string.Format("{0}\t{1}\t{2}", FirstName, LastName, Age);
 
         }
     }

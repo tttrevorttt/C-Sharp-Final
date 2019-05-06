@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+
+
 
 namespace Final
 {
@@ -10,12 +11,70 @@ namespace Final
     {
         static void Main()
         {
+            QueryArrayList();
+            Console.ReadLine();
             
         }
 
-        static void QueryStringArray()
+        static void QueryArrayList()
         {
-            string[] firstnames = { "Trevor", "John", "Jessie", "Ceader", "Thor", "Alison", "Kate", "Rebeca", "Matt", "Shelby" };
+            ArrayList people = new ArrayList()
+            {
+                new People
+                {
+                    FirstName = "Trevor",
+                    LastName = "Gorham",
+                    Age = 20
+                },
+                new People
+                {
+                    FirstName = "John",
+                    LastName = "Apple",
+                    Age = 15
+
+                },
+                new People
+                {
+                    FirstName = "Jessie",
+                    LastName = "Steers",
+                    Age = 32
+
+                },
+                new People
+                {
+                    FirstName = "Ceeder",
+                    LastName = "Write",
+                    Age = 37
+                },
+                new People
+                {
+                    FirstName = "Alison",
+                    LastName = "Frenton",
+                    Age = 21
+                 
+                }
+            };
+            Console.WriteLine("Names that Start with J");
+            var peoples = people.OfType<People>();
+            var peoplewithJ = from j in peoples
+                              where j.FirstName.StartsWith("J")
+                              select j;
+            foreach (var jname in peoplewithJ)
+            {
+                Console.WriteLine(jname.ToString());
+            }
+            Console.WriteLine("\nOrder by age decending order");
+            var decendpeople = from name in peoples
+                               orderby name.Age descending
+                               select name;
+
+            foreach (var dname in decendpeople)
+            {
+                Console.WriteLine(dname.ToString());
+            }
+
+
+
         }
     }
 }
