@@ -8,10 +8,14 @@ namespace Final
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World");
-            Console.WriteLine("NOTHIn");
+            
+        }
+
+        static void QueryStringArray()
+        {
+            string[] firstnames = { "Trevor", "John", "Jessie", "Ceader", "Thor", "Alison", "Kate", "Rebeca", "Matt", "Shelby" };
         }
     }
 }
