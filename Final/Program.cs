@@ -68,11 +68,15 @@ namespace Final
                                orderby name.Age descending
                                select name;
 
+            int avg = 0;
             foreach (var dname in decendpeople)
             {
                 Console.WriteLine(dname.ToString());
+                avg = Convert.ToInt32(dname.Age) + avg; 
             }
-
+            avg = avg / people.Count;
+            Console.WriteLine("\nThe average of all ages is "+avg );
+            
 
 
         }
